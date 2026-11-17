@@ -1,5 +1,6 @@
 # Virtual environment
 .venv
+.vscode
 
 # Dataset
 dataset/*
@@ -7,3 +8,6 @@ dataset/*
 
 # Python cache
 __pycache__
+
+# Outputs
+submission*.csv
