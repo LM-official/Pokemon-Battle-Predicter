@@ -1,0 +1,9 @@
+# Virtual environment
+.venv
+
+# Dataset
+dataset/*
+!dataset/.gitkeep
+
+# Python cache
+__pycache__
