@@ -11,3 +11,5 @@ __pycache__
 
 # Outputs
 submission*.csv
+temp
+tests
