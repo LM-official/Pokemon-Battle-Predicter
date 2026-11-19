@@ -1,0 +1,28 @@
+% !TeX root = ../main.tex
+\section{Feature Engineering and Selection}
+\label{sec:features}
+
+These features track battle trends and resource advantages that may influence
+the final outcome.
+
+\begin{itemize}[leftmargin=*,itemsep=0pt,parsep=0pt,topsep=2pt]
+    \item \textbf{Base stats:} summarize team combat strength.
+    \item \textbf{Team type weakness:} expose vulnerable matchups.
+    \item \textbf{HP loss:} measure damage and momentum.
+    \item \textbf{Type multipliers:} quantify attack effectiveness.
+    \item \textbf{Statuses:} track damage, stat penalties, and lost turns.
+    \item \textbf{Boosts:} measure changes in combat strength.
+    \item \textbf{Effects:} capture temporary battle advantages.
+    \item \textbf{Last-turn snapshot:} summarize the current state.
+    \item \textbf{Faints:} P1 actual faints and P2 estimated faints.
+    \item \textbf{Held items:} capture healing and damage bonuses.
+    \item \textbf{Deployment:} counts, levels~\cite{pokemon_stat_formula}, effective HP reserves.
+    \item \textbf{Tactics:} tempo/power, hazards, phazing, RestTalk~\cite{bulbapedia_metagame}.
+\end{itemize}
+
+\noindent\textbf{Feature selection.}
+We first ran all features and retained those most correlated with the
+win/loss target. For the three submitted logistic-regression/ensemble
+configurations, we searched subsets by iterative SHAP-guided
+pruning, repeatedly discarding weak predictors and reevaluating retained
+features to obtain the final sets.

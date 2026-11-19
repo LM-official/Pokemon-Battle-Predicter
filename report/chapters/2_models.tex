@@ -1,0 +1,8 @@
+% !TeX root = ../main.tex
+\section{Models}
+\label{sec:models}
+We began with a baseline Logistic Regression model. Moving to tree-based architectures, we initially tested Random Forest, but LightGBM demonstrated superior accuracy and efficiency in capturing non-linear interactions. We also evaluated XGBoost and CatBoost, finally combining all four into a soft-voting ensemble (\texttt{VotingClassifier}). Averaging predicted probabilities balances tree-based non-linear partitioning with linear global regularization, reducing out-of-fold variance.
+
+\section{Optimization}
+\label{sec:optimization}
+To boost performance, we prioritized differential features ($P_1 - P_2$, e.g., HP lost, fainted counts, base stats), enabling models to directly leverage relative advantage in 1v1 zero-sum battles. All preprocessing (median imputation, one-hot encoding, scaling) was isolated in Scikit-learn pipelines fitted strictly per fold to eliminate data leakage. Overfitting on the 30-turn window was mitigated by restricting tree depth to $5$, using a conservative learning rate ($\eta = 0.04$), and applying $0.8$ feature and sample subsampling.

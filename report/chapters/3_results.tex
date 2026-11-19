@@ -1,0 +1,31 @@
+% !TeX root = ../main.tex
+\section{Validation Strategy and Metrics}
+\label{sec:validation}
+
+We evaluate each feature/model configuration with the same repeated stratified
+five-fold splits (three repeats, seed~$42$ for reproducibility). Imputation,
+one-hot encoding, and scaling are fitted inside each training fold. We report
+fold means for training and validation accuracy, precision, recall, F1, and
+ROC-AUC, plus the population standard deviation of validation scores. OOF
+probabilities are averaged across repeats and thresholded at~$0.5$. The ensemble
+and its individual learners are scored on the same folds.
+
+\section{Final Performance}
+\label{sec:results}
+
+\begin{table}[ht]
+    \centering
+    \small
+    \caption{Final submissions: accuracy summaries to complete.\\
+    \texttt{lr} = Logistic~Regression, \texttt{ens} = Ensemble.}
+    \label{tab:results}
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Submission & Train mean & Val.\ mean $\pm$ SD & OOF   \\
+        \midrule
+        \texttt{lr\_dani}  & 0.690 & 0.686 (0.008) & 0.686 \\
+        \texttt{lr\_fil}   & 0.691 & 0.685 (0.007) & 0.686 \\
+        \texttt{ens\_lore} & 0.756 & 0.682 (0.006) & 0.683 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

@@ -1,0 +1,52 @@
+% Template modified from CVPR 2026 Paper Template; see https://github.com/cvpr-org/author-kit
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr} 
+
+\input{preamble}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, 
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\hypersetup{pdftitle={Predicting Pokemon Battle Outcomes from Partial Observations}}
+
+\title{Predicting Pok\'emon Battle Outcomes from Partial Observations}
+
+\author{
+\begin{tabular}{@{}cc@{}}
+Daniele Zu & Filippo Pierbattisti\\
+{\tt\small zu.2114393@studenti.uniroma1.it} &
+{\tt\small pierbattisti.2114213@studenti.uniroma1.it}\\[0.6em]
+Francesco Giammaria & Lorenzo Mercuri\\
+{\tt\small giammaria.2108040@studenti.uniroma1.it} &
+{\tt\small mercuri.2145783@studenti.uniroma1.it}
+\end{tabular}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study prediction of the final winner of Generation~2 OU Pok\'emon battles
+from the first 30 active turns. The notebook converts team information and
+battle observations into tabular features for classical model comparison
+and repeated cross-validation.
+\end{abstract}
+
+\input{chapters/1_features}
+\input{chapters/2_models}
+\input{chapters/3_results}
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{references}
+}
+
+\end{document}
